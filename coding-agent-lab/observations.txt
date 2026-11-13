@@ -1,0 +1,50 @@
+
+===== lesson1 =====
+L1 first answer: SOLID is a set of five object-oriented design principles—Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion—that help make code easier to maintain, extend, and test.
+L1 stateless answer: You asked: “What did I just ask you?”
+L1 bullet answer: - Catches bugs early
+- Makes code safer to change
+- Documents expected behavior
+
+===== lesson2 =====
+L2 missing-file answer: I couldn’t read `no_such_file.py` because it doesn’t exist at that path.
+
+If you want, send the correct path or paste the file contents here, and I’ll explain it.
+L2 item order: ['tool_call_item', 'tool_call_output_item', 'message_output_item']
+L2 tool output: Error: File not found: no_such_file.py
+
+===== lesson3 =====
+L3 answer: In `obs_files`, the Python files are:
+
+- `alpha.py` — defines `alpha()`, which returns `'a'`.
+- `beta.py` — defines `beta(n)`, which returns `n + 1`.
+
+`notes.txt` is not a Python file.
+L3 calls: ['list_files({"path":"obs_files"})', 'read_file({"path":"obs_files/alpha.py"})', 'read_file({"path":"obs_files/beta.py"})', 'read_file({"path":"obs_files/notes.txt"})']
+
+===== lesson4 =====
+L4 answer: Not available in the current environment:
+
+- Git branch: not in a git repository
+- Python version: Python not installed / not on PATH
+L4 calls: ['run_command({"command":"git branch --show-current"})', 'run_command({"command":"python --version"})']
+L4 tool output: 
+STDERR:
+fatal: not a git repository (or any of the parent directories): .git
+
+(exit code: 128)
+L4 tool output: 
+STDERR:
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.
+
+(exit code: 9009)
+
+===== lesson5 =====
+L5 rename answer: Done.
+L5 calls: ['read_file({"path":"obs_rename.py"})', 'edit_file({"path":"obs_rename.py","old_str":"    count = 0\\n    for v in values:\\n        count = count + v\\n    return count\\n","new_str":"    total = 0\\n    for v in values:\\n        total = total + v\\n    return total\\n"})']
+L5 file after:
+def summarise(values):
+    total = 0
+    for v in values:
+        total = total + v
+    return total
